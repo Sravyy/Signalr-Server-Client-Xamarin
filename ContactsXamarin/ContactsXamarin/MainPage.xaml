@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage Padding="10,10,10,10"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ContactsXamarin"
+             x:Class="ContactsXamarin.MainPage">
+
+    <ListView x:Name="listView"
+              SeparatorVisibility="None" 
+              HasUnevenRows="True"
+              >
+
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Padding="3" BindingContext="SignalRClient">
+                        <Image Source="{Binding ImageUrl}"  />
+                        <StackLayout HorizontalOptions="StartAndExpand">
+                            <Label Text="{Binding Name}"/>
+                            
+                        </StackLayout>
+                        <Button Text="Follow"/>
+                    </StackLayout>
+                </ViewCell>
+                
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+</ContentPage>
